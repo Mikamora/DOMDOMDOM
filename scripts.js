@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         boxNumber++;
         row.appendChild(box);
         let idStr = box.id;
-        let prevSibling = document.getElementById(idStr).previousSibling;
         box.addEventListener("mouseenter", function () {
             event.target.textContent = idStr;
         })
