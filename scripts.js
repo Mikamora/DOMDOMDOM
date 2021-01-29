@@ -34,13 +34,19 @@ document.addEventListener("DOMContentLoaded", function () {
         box.addEventListener("dblclick", function () {
             let nextSibling = document.getElementById(idStr).nextSibling;
             let prevSibling = document.getElementById(idStr).previousSibling;
-            if (nextSibling == null || prevSibling == null) {
-                alert("oopsie! Doesn't exist....");
-                return;
-            } else {
 
-                if (idStr % 2 == 0) {
+
+            if (idStr % 2 == 0) {
+                if (nextSibling == null) {
+                    alert("oopsie! Doesn't exist....");
+                    return;
+                } else {
                     nextSibling.parentNode.removeChild(nextSibling);
+                }
+            } else {
+                if (prevSibling == null) {
+                    alert("oopsie! Doesn't exist....");
+                    return;
                 } else {
                     prevSibling.parentNode.removeChild(prevSibling);
                 }
